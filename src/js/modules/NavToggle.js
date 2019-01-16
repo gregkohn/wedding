@@ -9,8 +9,6 @@ export default class NavToggle {
   setVariables() {
     this.navLinks = document.querySelector('.nav-links')
     this.visibleClass = '-is-visible'
-
-    console.log(this.navLinks, this.el)
   }
 
   bindEvents() {
