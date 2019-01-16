@@ -78,7 +78,7 @@ module.exports = {
             gulpif(
               global.production,
               purgecss({
-                content: ['../../src/**/*.html'],
+                content: ['../../src/**/*.html', '../../src/**/*.js'],
                 extractors: [
                   {
                     extractor: TailwindExtractor,
