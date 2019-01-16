@@ -1,0 +1,14 @@
+{% from 'macros/helpers.html' import sprite %}
+
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+  <main class="flex-grow sm:min-h-screen sm:flex flex-col justify-center bg-gray-100 p-32 sm:p-72">
+    <div>
+      {# <h1 class="hd-14 text-gray-600 mb-12">
+        {{ activePage | default(null) }}
+      </h1> #}
+      {% block pageContent %}{% endblock %}
+    </div>
+  </main>
+{% endblock %}

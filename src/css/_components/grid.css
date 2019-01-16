@@ -1,0 +1,10 @@
+.grid {
+  @apply flex;
+  @apply flex-wrap;
+  @apply -mx-16;
+}
+
+.grid-item {
+  @apply px-16;
+  @apply w-full;
+}

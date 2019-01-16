@@ -1,0 +1,11 @@
+.text {
+  & p {
+    @apply mb-24;
+  }
+
+  & a {
+    @apply border-b-2;
+    @apply inline-block;
+    @apply text-black;
+  }
+}

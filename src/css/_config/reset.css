@@ -1,0 +1,169 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  /* removed border, explained by Tailwind reset below */
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+}
+
+/* Custom reset styles
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  @apply font-sans;
+  @apply leading-normal;
+  @apply text-gray-600;
+}
+
+button,
+[role="button"],
+input[type="submit"] {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Eliminate outline for mouse users */
+html[data-whatinput="mouse"] *:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+input,
+select {
+  @apply p-12;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+a,
+a:hover
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+svg {
+  display: block;
+  fill: currentColor;
+}
+
+
+/**
+ * Tailwind custom reset styles
+ */
+
+/**
+ * Allow adding a border to an element by just adding a border-width.
+ *
+ * By default, the way the browser specifies that an element should have no
+ * border is by setting it's border-style to `none` in the user-agent
+ * stylesheet.
+ *
+ * In order to easily add borders to elements by just setting the `border-width`
+ * property, we change the default border-style for all elements to `solid`, and
+ * use border-width to hide them instead. This way our `border` utilities only
+ * need to set the `border-width` property instead of the entire `border`
+ * shorthand, making our border utilities much more straightforward to compose.
+ *
+ * https://github.com/tailwindcss/tailwindcss/pull/116
+ */
+ *,
+ *::before,
+ *::after {
+   border-width: 0;
+   border-style: solid;
+   border-color: config('borderColors.default', currentColor);
+ }
+
+ /**
+  * Undo the `border-style: none` reset that Normalize applies to images so that
+  * our `border-{width}` utilities have the expected effect.
+  *
+  * The Normalize reset is unnecessary for us since we default the border-width
+  * to 0 on all elements.
+  *
+  * https://github.com/tailwindcss/tailwindcss/issues/362
+  */
+ img {
+   border-style: solid;
+ }
+
+ textarea {
+   resize: vertical;
+ }
+
+ input::placeholder,
+ textarea::placeholder {
+   color: inherit;
+   opacity: 0.5;
+ }
+
+ table {
+   border-collapse: collapse;
+ }

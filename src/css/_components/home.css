@@ -1,0 +1,59 @@
+.home-bg {
+  background-image: url('../images/home-bg.jpg');
+  @apply bg-cover;
+  @apply bg-no-repeat;
+  @apply bg-top;
+  @apply text-center;
+  @apply pt-72;
+
+  @apply relative;
+  @apply z-1;
+
+  &::before {
+    content: '';
+    @apply absolute;
+    @apply pin-x pin-y;
+    @apply bg-gray-900;
+    @apply opacity-25;
+    @apply z--1;
+  }
+}
+
+.home-bg__date {
+  @apply block;
+  @apply font-serif;
+  @apply opacity-0;
+  @apply text-36;
+  @apply text-white;
+  @apply uppercase;
+  animation: fadeInUp 0.7s 0.4s forwards;
+  letter-spacing: 0.16em;
+  visibility: hidden;
+
+  @screen sm {
+    @apply text-64;
+
+  }
+}
+
+.home-bg__location {
+  @apply text-white;
+  @apply opacity-0;
+  animation: fadeInUp 0.7s 1s forwards;
+  visibility: hidden;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+}

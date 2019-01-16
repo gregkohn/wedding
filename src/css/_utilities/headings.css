@@ -1,0 +1,14 @@
+.hd-14 {
+  @apply font-black;
+  @apply font-sans;
+  @apply text-14;
+  @apply tracking-wide;
+  @apply uppercase;
+}
+
+.hd-36 {
+  @apply font-serif;
+  @apply text-36;
+  @apply text-black;
+  @apply tracking-slight;
+}

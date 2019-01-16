@@ -7,5 +7,20 @@
   "license": "MIT",
   "dependencies": {
     "blendid": "^4.4.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.7",
+    "gulp-if": "^2.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^1.1.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-mixins": "^6.2.1",
+    "postcss-nesting": "^7.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "postcss-reporter": "^6.0.0",
+    "postcss-units": "^1.2.1",
+    "tailwindcss": "^0.7.3"
   }
 }
