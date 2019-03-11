@@ -20,11 +20,16 @@ class TailwindExtractor {
 }
 
 module.exports = {
-  html: true,
   images: true,
   static: true,
   svgSprite: true,
   ghPages: true,
+
+  html: {
+    excludeFolders: [
+      'partials'
+    ]
+  },
 
   javascripts: {
     entry: {
