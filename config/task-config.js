@@ -27,7 +27,10 @@ module.exports = {
 
   html: {
     excludeFolders: [
-      'partials'
+      'partials',
+      'layouts',
+      'data',
+      'macros'
     ]
   },
 
