@@ -1,14 +1,27 @@
+{% import 'macros/icons.html' as icons %}
 {% set activePage = activePage | default(null) %}
-
 {% set upperLinks = ['details', 'lodging', 'transportation'] %}
 {% set lowerLinks = ['registry', 'gallery', 'misc'] %}
 
-<section class="nav-links sm:flex flex-col flex-no-shrink justify-center sm:min-h-screen px-12 sm:py-24 sm:px-72 text-black text-center">
-  <nav class="smd:mb-24">
-    <ul>
+<div class="relative py-12 text-center sm:hidden">
+  <a href="/">
+    {{ icons.mg() }}
+  </a>
+  <button class="nav-toggle" data-module="NavToggle">
+    <svg viewBox="0 0 24 24" height="24" width="24">
+      <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+      <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+      <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+    </svg>
+  </button>
+</div>
+
+<section class="nav-links">
+  <nav class="nav-link-container pr-24">
+    <ul class="flex justify-end">
       {% for link in upperLinks %}
         {% set isActive = link == activePage %}
-        <li class="nav-link {{ 'mb-24' if not loop.last }} {{ '-is-active' if isActive }}">
+        <li class="nav-link {{ '-is-active' if isActive }}">
           <a href="{{ link }}.html">
             {{ link }}
           </a>
@@ -17,15 +30,15 @@
     </ul>
   </nav>
 
-  <a href="/" class="block my-48 text-64 smd:hidden">
-    M & G
+  <a href="/" class="nav-heading block smd:hidden">
+    {{ icons.mg() }}
   </a>
 
-  <nav>
-    <ul>
+  <nav class="nav-link-container pl-24">
+    <ul class="flex">
       {% for link in lowerLinks %}
         {% set isActive = link == activePage %}
-        <li class="nav-link mb-24 {{ '-is-active' if isActive }}">
+        <li class="nav-link {{ '-is-active' if isActive }}">
           <a href="{{ link }}.html">
             {{ link }}
           </a>

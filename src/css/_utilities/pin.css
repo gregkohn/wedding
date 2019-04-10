@@ -1,0 +1,9 @@
+/* outside left */
+.pin-ol {
+  right: 100%;
+}
+
+/* outside right */
+.pin-or {
+  left: 100%;
+}

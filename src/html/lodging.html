@@ -1,13 +1,16 @@
 {% extends 'layouts/page.html' %}
 
 {% set activePage = 'lodging' %}
+{% set photo = 'photo-2.jpg' %}
 
 {% block pageContent %}
-  <div class="max-w-400">
-    <article class="mb-48 text">
-      <h2 class="hd-36 mb-8">
-        hotel block
-      </h2>
+  <div class="px-16 text-center">
+    <article class="mb-64 text">
+      <div class="flex justify-center">
+        <h2 class="font-serif text-24 leading-none mb-16 pb-8 border-b-2 border-green-300">
+          hotel block
+        </h2>
+      </div>
       <p>
         We have reserved a room block at
         <a href="https://www.hiexpress.com/redirect?path=hd&brandCode=EX&localeCode=en&regionCode=1&hotelCode=BHNDE&_PMID=99801505&GPC=KWP&viewfullsite=true" target="_blank">
@@ -34,9 +37,11 @@
     </article>
 
     <article class="text">
-      <h2 class="hd-36 mb-8">
-        other options
-      </h2>
+      <div class="flex justify-center">
+        <h2 class="font-serif text-24 leading-none mb-16 pb-8 border-b-2 border-green-300">
+          other options
+        </h2>
+      </div>
       <p>
         <a href="https://www.marriott.com/hotels/maps/travel/rehri-bethany-beach-ocean-suites-residence-inn/">Bethany Beach Ocean Suites Residence Inn</a>
         is situated on the boardwalk.

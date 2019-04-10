@@ -1,18 +1,18 @@
 {% extends 'layouts/app.html' %}
 
 {% block content %}
-  <main class="home-bg sm:min-h-screen flex-grow">
+  <main>
     <h1 class="sr-only">
-      Michelle &amp; Greg Wedding
+      Michelle &amp; Greg's Wedding
     </h1>
-    <h2>
-      <time class="home-bg__date" datetime="06-15-2019">
+    <h2 class="bg-green p-16 text-black text-center">
+      <time class="block font-serif text-36 leading-none mb-12" datetime="06-15-2019">
         June 15, 2019
       </time>
-      <div class="home-bg__location hd-14">
+      <div class="font-light text-14 tracking-wide uppercase">
         Bethany Beach
       </div>
     </h2>
-
+    <img src="images/home-bg.jpg">
   </main>
 {% endblock %}
