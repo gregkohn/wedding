@@ -4,8 +4,11 @@
   }
 
   & a {
-    @apply border-b-2;
+    @apply border-b;
     @apply inline-block;
-    @apply text-black;
+    /* @apply text-black; */
+    @apply text-green-700;
+    /* @apply border-green-700; */
+    /* @apply underline; */
   }
 }

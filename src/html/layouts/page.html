@@ -1,14 +1,31 @@
-{% from 'macros/helpers.html' import sprite %}
-
 {% extends 'layouts/app.html' %}
 
+{% set activePage = activePage | default(null) %}
+{% set photo = photo | default(null) %}
+
 {% block content %}
-  <main class="flex-grow sm:min-h-screen sm:flex flex-col justify-center bg-gray-100 p-32 sm:p-72">
-    <div>
-      {# <h1 class="hd-14 text-gray-600 mb-12">
-        {{ activePage | default(null) }}
-      </h1> #}
-      {% block pageContent %}{% endblock %}
+  {# <div class="border-t-20 border-green-100 mb-32"></div> #}
+  <main class="max-w-960 mx-auto sm:pb-64">
+    <div class="sm:flex -mx-32 {{ 'justify-center' if not photo }}">
+      <section class="sm:w-1/2 px-32 smd:mb-64">
+        {% if activePage %}
+          <h1 class="font-serif text-48 text-black mb-24 capitalize text-center">
+            {{ activePage }}
+          </h1>
+        {% endif %}
+        {% block pageContent %}{% endblock %}
+      </section>
+
+      {% if photo %}
+        <section class="sm:w-1/2 px-32">
+          <img
+            src="images/pages/435/{{ photo }}.jpg"
+            srcset="images/pages/435/{{ photo }}.jpg 435w, images/pages/870/{{ photo }}.jpg 870w"
+            sizes="(min-width: 768px) 435px, 100vw"
+            alt=""
+          >
+        </section>
+      {% endif %}
     </div>
   </main>
 {% endblock %}

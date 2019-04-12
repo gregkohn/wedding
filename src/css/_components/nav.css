@@ -1,48 +1,95 @@
+.nav {
+  @screen md {
+    @apply bg-contain;
+    @apply bg-no-repeat;
+    background-image: url('../images/plants-bg.jpg');
+    background-position: center top;
+  }
+}
+
+.nav-links {
+  @apply relative;
+  @apply text-black;
+  @apply text-center;
+  @apply z-1;
+
+  @screen md {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply pt-64 px-16 pb-72;
+  }
+}
+
+.nav-mobile {
+  @apply bg-contain;
+  @apply bg-no-repeat;
+  @apply flex;
+  @apply justify-center;
+  @apply py-12;
+  @apply relative;
+  background-image: url('../images/plants-bg.jpg');
+  background-position: center top;
+
+  @screen md {
+    @apply hidden;
+  }
+}
+
+
+.nav-heading {
+  & svg {
+    height: 96px;
+    width: 222px;
+  }
+}
+
+.nav-link-container {
+  @screen md {
+    width: calc(50% - 111px);
+  }
+}
+
 .nav-link {
   @apply font-bold;
   @apply font-sans;
   @apply px-4;
   @apply text-12;
   @apply text-center;
-  @apply tracking-wide;
   @apply uppercase;
+  letter-spacing: 0.15em;
 
   & a {
     @apply inline-block;
-    @apply pl-8 pr-4;
+    @apply pl-8 pb-4 pr-4;
     @apply relative;
 
     &::before {
       @apply absolute;
-      @apply bg-gray-300;
+      @apply bg-black;
       @apply pin-b;
       @apply pin-l;
       @apply w-full;
       @apply z--1;
       content: '';
-      height: 50%;
-      transform-origin: bottom center;
-      transform: scaleY(0);
+      height: 2px;
+      transform-origin: left;
+      transform: scaleX(0);
       transition: transform 0.3s;
+    }
+
+    @screen mdd {
+      @apply mb-8;
+    }
+
+    @screen md {
+      @apply pb-8;
     }
   }
 
   &.-is-active a::before,
   & a:hover::before {
-    transform: scaleY(1);
-  }
-}
-
-.nav-links {
-  transition: max-height 0.4s ease-in-out;
-
-  @screen smd {
-    @apply overflow-hidden;
-    max-height: 0px;
-
-    &.-is-visible {
-      max-height: 275px;
-    }
+    transform: scaleX(1);
   }
 }
 

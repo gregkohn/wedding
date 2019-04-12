@@ -1,0 +1,14 @@
+[data-togglee] {
+  @apply opacity-100;
+  @apply overflow-hidden;
+  transition: all 0.3s;
+  visibility: visible;
+}
+
+@responsive {
+  .collapsed {
+    @apply opacity-0;
+    max-height: 0 !important;
+    visibility: hidden;
+  }
+}
