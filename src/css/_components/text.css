@@ -6,9 +6,20 @@
   & a {
     @apply border-b;
     @apply inline-block;
-    /* @apply text-black; */
     @apply text-green-700;
-    /* @apply border-green-700; */
-    /* @apply underline; */
+  }
+
+  & ul {
+    list-style: disc;
+
+    & li {
+      @apply mb-16;
+      @apply ml-16;
+    }
+
+    & ul {
+      @apply pt-16;
+      list-style: circle;
+    }
   }
 }

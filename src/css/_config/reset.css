@@ -55,8 +55,8 @@ th {
 */
 
 html {
+  @apply overflow-x-hidden;
   box-sizing: border-box;
-  overflow-x: hidden;
   width: 100vw;
 }
 
@@ -69,6 +69,7 @@ html {
 body {
   @apply font-sans;
   @apply leading-normal;
+  @apply overflow-x-hidden;
   @apply text-gray-600;
 }
 
