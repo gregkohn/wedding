@@ -1,0 +1,62 @@
+.carousel {
+  @apply overflow-hidden;
+  @apply pb-32;
+  @apply relative;
+}
+
+.carousel-slider {
+  @apply flex;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.4s;
+}
+
+.carousel-slide {
+  @apply flex-no-shrink;
+  @apply w-full;
+}
+
+.carousel-arrow {
+  @apply absolute;
+  @apply bg-white;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply text-gray-900;
+  @apply h-48 w-48;
+  border-radius: 50%;
+  top: calc(50% - 48px/2);
+
+  &[disabled] {
+    @apply opacity-25;
+    cursor: not-allowed;
+  }
+
+  & svg {
+    @apply h-32 w-32;
+  }
+}
+
+.carousel-indicators {
+  @apply flex;
+  @apply max-w-400;
+  @apply py-8 px-32;
+  @apply relative;
+  @apply w-full;
+  @apply z-1;
+
+  @screen sm {
+    @apply py-12 px-48;
+  }
+}
+
+
+.carousel-indicator {
+  @apply bg-gray-300;
+  @apply flex-1;
+  height: 3px;
+  transition: background-color 0.2s;
+
+  &.-is-active {
+    @apply bg-green-700;
+  }
+}

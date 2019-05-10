@@ -1,14 +1,54 @@
-{% extends 'layouts/page.html' %}
+{% extends 'layouts/blank-page.html' %}
 
 {% set activePage = 'gallery' %}
+{% set images = ['mg15', 'mg31', 'mg38', 'mg67', 'mg95', 'mg127', 'mg163', 'mg174', 'mg176', 'mg185', 'mg241', 'mg268', 'mg287', 'mg301', 'mg315', 'mg321', 'mg328', 'mg337', 'mg352', 'mg358', 'mg364', 'mg366', 'mg378', 'mg390', 'mg414', 'mg418', 'mg426', 'mg427', 'mg445'] %}
 
 {% block pageContent %}
-  <div class="text-center">
-    <article class="text">
-      <p>
-        Coming soon.
-      </p>
-    </article>
+  <div class="px-16">
+    <section
+      class="carousel max-w-1280 my-48 mx-auto"
+      data-module="Carousel"
+    >
+      <div class="carousel-slider">
+        {% for image in images %}
+          <div class="carousel-slide bg-gray-200">
+            <div
+              class="aspect-ratio-16/9 bg-gray-900 bg-contain bg-center bg-no-repeat"
+              style="background-image:url('images/gallery/{{ image }}.jpg');">
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="aspect-ratio-16/9 absolute pin-t pin-x z-1">
+        {# On desktop, use arrows #}
+        <button
+          class="carousel-arrow ml-8 pin-l z-2 smd:hidden"
+          data-dir="left"
+          aria-label="Slide left"
+          disabled
+        >
+          <svg viewBox="0 0 24 24">
+            <path d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z"></path>
+          </svg>
+        </button>
+        <button
+          class="carousel-arrow mr-8 pin-r rotate-180 z-2 smd:hidden"
+          data-dir="right"
+          aria-label="Slide right"
+        >
+          <svg viewBox="0 0 24 24">
+            <path d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z"></path>
+          </svg>
+        </button>
+
+        {# Indicators populated via js #}
+        <div class="flex w-full justify-center">
+          <div class="carousel-indicators"></div>
+        </div>
+      </div>
+    </section>
   </div>
+
 {% endblock %}
 

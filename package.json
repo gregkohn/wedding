@@ -6,7 +6,8 @@
   "author": "Greg Kohn <greg.kohn@viget.com>",
   "license": "MIT",
   "dependencies": {
-    "blendid": "^4.4.3"
+    "blendid": "^4.4.3",
+    "hammerjs": "^2.0.8"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",

@@ -1,0 +1,14 @@
+{% extends 'layouts/app.html' %}
+
+{% set activePage = activePage | default(null) %}
+
+{% block content %}
+  <main class="sm:pb-64">
+    {% if activePage %}
+      <h1 class="font-serif text-48 text-black mb-24 capitalize text-center">
+        {{ activePage }}
+      </h1>
+    {% endif %}
+    {% block pageContent %}{% endblock %}
+  </main>
+{% endblock %}

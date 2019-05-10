@@ -376,6 +376,8 @@ module.exports = {
     '1/2': '50%',
     '1/3': '33.33333%',
     'full': '100%',
+    '32': '32px',
+    '48': '48px',
   },
 
 
@@ -388,6 +390,8 @@ module.exports = {
   height: {
     'full': '100%',
     'screen': '100vh',
+    '32': '32px',
+    '48': '48px',
   },
 
 
@@ -441,6 +445,7 @@ module.exports = {
   maxWidth: {
     '400': '400px',
     '960': '960px',
+    '1280': '1280px',
   },
 
 
@@ -634,6 +639,71 @@ module.exports = {
   },
 
 
+
+  /*
+  |-----------------------------------------------------------------------------
+  | Transition Duration
+  |-----------------------------------------------------------------------------
+  | All four transition properties accept a `default` key, which is applied
+  | using `.transition`.
+  |
+  | Class name: .transition-{duration}
+  */
+
+ transitionDuration: {
+  faster: '.1s',
+  fast: '.2s',
+  default: '.3s',
+  slow: '.5s',
+  slower: '.8s',
+},
+
+
+/*
+|-----------------------------------------------------------------------------
+| Transition Property
+|-----------------------------------------------------------------------------
+| All four transition properties accept a `default` key, which is applied
+| using `.transition`.
+|
+| Class name: .transition-property-{property}
+*/
+
+transitionProperty: {
+  default: 'all',
+  transform: 'transform',
+},
+
+
+/*
+|-----------------------------------------------------------------------------
+| Transition Timing Function
+|-----------------------------------------------------------------------------
+| All four transition properties accept a `default` key, which is applied
+| using `.transition`.
+|
+| Class name: .transition-timing-{timing}
+*/
+
+transitionTimingFunction: {
+  default: 'ease-in-out',
+},
+
+
+/*
+|-----------------------------------------------------------------------------
+| Transition Delay
+|-----------------------------------------------------------------------------
+| All four transition properties accept a `default` key, which is applied
+| using `.transition`.
+|
+| Class name: .transition-delay-{delay}
+*/
+
+transitionDelay: {},
+
+
+
   /*
   |-----------------------------------------------------------------------------
   | Modules                  https://tailwindcss.com/docs/configuration#modules
@@ -723,6 +793,18 @@ module.exports = {
   */
 
   plugins: [
+    require('./tailwind-plugins/aspect-ratio')({
+      ratios: {
+        'square': [1, 1],
+        '16/9': [16, 9],
+      },
+      variants: ['responsive'],
+    }),
+    require('./tailwind-plugins/svg-wrapper'),
+    require('./tailwind-plugins/transitions')({
+      prefix: 'transition',
+      variants: [],
+    }),
   ],
 
 
